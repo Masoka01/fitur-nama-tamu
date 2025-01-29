@@ -134,34 +134,17 @@ function createHeart() {
   const randomDuration = Math.random() * 3 + 2;
   const randomColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
   const randomX = Math.random() * 200 - 100;
-  const randomSize = Math.random() * 20 + 20;
+  const randomSize = Math.random() * 20 + 30; // Ukuran acak
 
   heart.style.left = `${randomLeft}px`;
   heart.style.animationDuration = `${randomDuration}s`;
   heart.style.setProperty("--random-x", `${randomX}px`);
-  heart.style.backgroundColor = randomColor;
   heart.style.width = `${randomSize}px`;
   heart.style.height = `${randomSize}px`;
 
-  const before = document.createElement("div");
-  before.style.width = `${randomSize}px`;
-  before.style.height = `${randomSize}px`;
-  before.style.position = "absolute";
-  before.style.top = `-${randomSize / 2}px`;
-  before.style.left = "0";
-  before.style.backgroundColor = "inherit";
-  before.style.borderRadius = "50%";
-  heart.appendChild(before);
-
-  const after = document.createElement("div");
-  after.style.width = `${randomSize}px`;
-  after.style.height = `${randomSize}px`;
-  after.style.position = "absolute";
-  after.style.left = `${randomSize / 2}px`;
-  after.style.top = "0";
-  after.style.backgroundColor = "inherit";
-  after.style.borderRadius = "50%";
-  heart.appendChild(after);
+  heart.style.backgroundColor = randomColor;
+  heart.style.boxShadow = `0 0 15px 5px ${randomColor}`;
+  heart.style.filter = `drop-shadow(0 0 10px ${randomColor})`;
 
   setTimeout(() => {
     heart.remove();
