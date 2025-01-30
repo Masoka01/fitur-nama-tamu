@@ -41,6 +41,7 @@ Assalamu’alaikum Warahmatullahi Wabarakatuh,
 Dengan penuh rasa syukur dan kebahagiaan, kami mengundang ${singleLineName} untuk menghadiri acara pernikahan kami.
 
 Detail acara dapat dilihat melalui tautan berikut:
+
 ${fullLink}
 
 Kehadiran dan doa restu anda sangat berarti bagi kami.
