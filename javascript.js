@@ -126,34 +126,30 @@ document
   .getElementById("copyButton")
   .addEventListener("click", copyToClipboard);
 
-let heartCount = 0;
-const maxHearts = 10; // Batas maksimal heart di layar
-
 function createHeart() {
-  if (heartCount >= maxHearts) return; // Stop jika sudah mencapai batas
-
   const heart = document.createElement("div");
   heart.classList.add("heart");
   document.body.appendChild(heart);
-  heartCount++; // Tambah jumlah heart
 
   const randomLeft = Math.random() * window.innerWidth;
   const randomDuration = Math.random() * 3 + 2;
   const randomColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
-  const randomSize = Math.random() * 8 + 8; // Ukuran lebih kecil (8px - 16px)
+  const randomX = Math.random() * 200 - 100;
+  const randomSize = Math.random() * 20 + 30; // Ukuran acak
 
   heart.style.left = `${randomLeft}px`;
   heart.style.animationDuration = `${randomDuration}s`;
+  heart.style.setProperty("--random-x", `${randomX}px`);
   heart.style.width = `${randomSize}px`;
   heart.style.height = `${randomSize}px`;
 
   heart.style.backgroundColor = randomColor;
-  heart.style.boxShadow = `0 0 5px 2px ${randomColor}`; // Shadow lebih ringan
+  heart.style.boxShadow = `0 0 15px 5px ${randomColor}`;
+  heart.style.filter = `drop-shadow(0 0 10px ${randomColor})`;
 
   setTimeout(() => {
     heart.remove();
-    heartCount--; // Kurangi jumlah heart saat dihapus
   }, randomDuration * 1000);
 }
 
-setInterval(createHeart, 500); // Interval lebih lama (500ms)
+setInterval(createHeart, 150);
