@@ -13,8 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('https://i.imgur.com/I3QUbcX.jpeg');
-  background-size: cover;
+  background-color: #000000;
 }
 
 .container {
