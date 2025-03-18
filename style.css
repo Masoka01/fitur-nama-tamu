@@ -14,6 +14,8 @@ body {
   align-items: center;
   height: 100vh;
   background-image: url(https://i.imgur.com/reEwAYW.jpeg);
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
