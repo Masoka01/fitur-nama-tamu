@@ -1,19 +1,3 @@
-const audio = document.getElementById("backgroundAudio");
-const audioControlBtn = document.getElementById("audioControlBtn");
-const audioIcon = document.getElementById("audioIcon");
-
-audioControlBtn.addEventListener("click", function () {
-  if (audio.paused) {
-    audio.play();
-    audioIcon.classList.remove("bi-play-fill");
-    audioIcon.classList.add("bi-pause-fill");
-  } else {
-    audio.pause();
-    audioIcon.classList.remove("bi-pause-fill");
-    audioIcon.classList.add("bi-play-fill");
-  }
-});
-
 function generateLink() {
   const baseUrl = document.getElementById("baseUrlInput").value.trim();
   const name = document.getElementById("nameInput").value.trim();
