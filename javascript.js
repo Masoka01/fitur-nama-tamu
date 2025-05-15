@@ -8,9 +8,10 @@ function generateLink() {
       let formattedName = domainName.includes("-")
         ? domainName
             .split("-")
+            .slice(0, 2) // Ambil hanya 2 bagian pertama
             .map((part) => capitalizeFirstLetter(part))
             .join(" & ")
-        : capitalizeFirstLetter(domainName);
+        : capitalizeFirstLetter(domainName.split("-")[0]); // Ambil hanya bagian pertama
 
       // Encode nama dengan baris baru untuk URL
       const encodedName = encodeURIComponent(name).replace(/%0A/g, "%0A");
@@ -20,7 +21,7 @@ function generateLink() {
       const fullLink = `${baseUrl}?p=${encodedName}`;
 
       const invitationText = `
-Assalamu’alaikum Warahmatullahi Wabarakatuh,
+Assalamu'alaikum Warahmatullahi Wabarakatuh,
 
 Dengan penuh rasa syukur dan kebahagiaan, kami mengundang ${singleLineName} untuk menghadiri acara pernikahan kami.
 
@@ -33,7 +34,7 @@ Kehadiran dan doa restu anda sangat berarti bagi kami.
 Hormat kami,
 ${formattedName}
 
-Wassalamu’alaikum Warahmatullahi Wabarakatuh.
+Wassalamu'alaikum Warahmatullahi Wabarakatuh.
       `.trim();
 
       const linkOutput = document.getElementById("linkOutput");
