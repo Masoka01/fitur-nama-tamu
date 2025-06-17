@@ -97,6 +97,106 @@ p {
   background-color: var(--second);
 }
 
+select,
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Tombol generate satu baris sendiri */
+.button-single {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-single button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-single button:hover {
+  background-color: var(--second);
+}
+
+/* Tombol WA setelah generate */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  min-width: 120px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background-color: #128c7e;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button-group button:hover {
+  transform: scale(1.02);
+  background-color: #0d6d5f;
+}
+
+.button-group button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Tombol copy */
+#copyButton {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+#copyButton:hover {
+  background-color: var(--second);
+}
+
+#copyButton:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 footer {
   position: fixed;
   bottom: 10px;

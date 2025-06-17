@@ -52,10 +52,48 @@
         placeholder="Nama Tamu"
         onkeydown="handleKeyPress(event)"
       ></textarea>
-      <button onclick="generateLink()">Buat Link</button>
-      <button id="copyButton" style="display: none" onclick="copyLink()">
-        Salin Kata-Kata & Link
+      <div id="parentInputContainer" style="display: none">
+        <label for="ayahInput">Nama Ayah:</label>
+        <input type="text" id="ayahInput" placeholder="Contoh: H. Ahmad" />
+
+        <label for="ibuInput">Nama Ibu:</label>
+        <input type="text" id="ibuInput" placeholder="Contoh: Hj. Siti" />
+      </div>
+      <label for="eventType">Jenis Acara:</label>
+      <select id="eventType" onchange="toggleParentInput()">
+        <option value="wedding">Islam</option>
+        <option value="khitan">Khitan</option>
+        <option value="universal">Universal</option>
+      </select>
+      <!-- Tombol Generate sendirian -->
+      <div class="button-single">
+        <button onclick="generateLink()" id="generateButton" title="Buat Link">
+          <i class="bi bi-gear-fill"></i> Buat Link
+        </button>
+      </div>
+
+      <!-- Tombol WA muncul setelah generate -->
+      <div class="button-group" id="extraButtons" style="display: none">
+        <button
+          id="waButton"
+          onclick="sendViaWhatsApp()"
+          disabled
+          title="Kirim via WhatsApp"
+        >
+          <i class="bi bi-whatsapp"></i> Kirim WA
+        </button>
+      </div>
+
+      <!-- Tombol Copy di bawah -->
+      <button
+        id="copyButton"
+        onclick="copyToClipboard()"
+        disabled
+        style="display: none"
+      >
+        <i class="bi bi-copy"></i> Salin Teks & Link
       </button>
+
       <p><strong>Kata-Kata Undangan:</strong></p>
       <p id="linkOutput"></p>
     </div>
