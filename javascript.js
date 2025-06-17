@@ -121,6 +121,10 @@ function sendViaWhatsApp() {
   const encodedText = encodeURIComponent(text);
   const waUrl = `https://wa.me/?text=${encodedText}`;
   window.open(waUrl, "_blank");
+
+  document.getElementById("nameInput").value = "";
+  document.getElementById("linkOutput").textContent = "";
+  hideOptionalButtons();
 }
 
 function showNotification(message) {
