@@ -201,8 +201,11 @@ function sendViaInstagram() {
 function sendViaTelegram() {
   const text = document.getElementById("linkOutput").textContent;
   const encodedText = encodeURIComponent(text);
+
+  // URL format Telegram Web Share
   const telegramUrl = `https://t.me/share/url?url=&text=${encodedText}`;
-  window.open(telegramUrl, "_blank");
+
+  window.open(telegramUrl, "_blank", "noopener,noreferrer");
 
   document.getElementById("nameInput").value = "";
   document.getElementById("linkOutput").textContent = "";
