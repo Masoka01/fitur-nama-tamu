@@ -76,7 +76,6 @@
         </button>
       </div>
 
-      <!-- Tombol WA muncul setelah generate -->
       <div class="button-group" id="extraButtons" style="display: none">
         <button
           id="waButton"
@@ -84,7 +83,23 @@
           disabled
           title="Kirim via WhatsApp"
         >
-          <i class="bi bi-whatsapp"></i> Kirim WA
+          <i class="bi bi-whatsapp"></i>
+        </button>
+        <button
+          id="igButton"
+          onclick="sendViaInstagram()"
+          disabled
+          title="Kirim via Instagram"
+        >
+          <i class="bi bi-instagram"></i>
+        </button>
+        <button
+          id="tgButton"
+          onclick="sendViaTelegram()"
+          disabled
+          title="Kirim via Telegram"
+        >
+          <i class="bi bi-telegram"></i>
         </button>
       </div>
 

@@ -191,6 +191,24 @@ function sendViaWhatsApp() {
   hideOptionalButtons();
 }
 
+function sendViaInstagram() {
+  const text = document.getElementById("linkOutput").textContent;
+  const encodedText = encodeURIComponent(text);
+  showNotification("Instagram tidak mendukung pengiriman langsung dari web.");
+  window.open(`https://www.instagram.com`, "_blank");
+}
+
+function sendViaTelegram() {
+  const text = document.getElementById("linkOutput").textContent;
+  const encodedText = encodeURIComponent(text);
+  const telegramUrl = `https://t.me/share/url?url=&text=${encodedText}`;
+  window.open(telegramUrl, "_blank");
+
+  document.getElementById("nameInput").value = "";
+  document.getElementById("linkOutput").textContent = "";
+  hideOptionalButtons();
+}
+
 function showNotification(message) {
   const notification = document.createElement("div");
   notification.textContent = message;
@@ -217,14 +235,20 @@ function showNotification(message) {
 
 function showOptionalButtons() {
   document.getElementById("waButton").disabled = false;
+  document.getElementById("igButton").disabled = false;
+  document.getElementById("tgButton").disabled = false;
   document.getElementById("copyButton").disabled = false;
+
   document.getElementById("extraButtons").style.display = "flex";
   document.getElementById("copyButton").style.display = "flex";
 }
 
 function hideOptionalButtons() {
   document.getElementById("waButton").disabled = true;
+  document.getElementById("igButton").disabled = true;
+  document.getElementById("tgButton").disabled = true;
   document.getElementById("copyButton").disabled = true;
+
   document.getElementById("extraButtons").style.display = "none";
   document.getElementById("copyButton").style.display = "none";
 }

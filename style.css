@@ -208,6 +208,59 @@ textarea {
   margin-top: 10px;
 }
 
+.button-group button {
+  flex: 1;
+  min-width: 48px;
+  height: 42px; /* sebelumnya 48px */
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  background-color: #128c7e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#igButton {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  background-size: 200% 200%;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+#igButton:hover {
+  transform: scale(1.05);
+}
+
+#tgButton i {
+  font-size: 20px;
+}
+
+#tgButton {
+  background-color: #0088cc;
+}
+
+#tgButton:hover {
+  background-color: #006fa6;
+}
+
 footer {
   position: fixed;
   bottom: 10px;
