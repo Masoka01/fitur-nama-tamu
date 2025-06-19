@@ -197,6 +197,17 @@ textarea {
   pointer-events: none;
 }
 
+#outputWrapper {
+  max-height: 200px; /* atur tinggi sesuai kebutuhan */
+  overflow-y: auto;
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
 footer {
   position: fixed;
   bottom: 10px;

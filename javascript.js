@@ -59,6 +59,70 @@ Hormat kami,
 Bapak ${ayah}
 Ibu ${ibu}
       `.trim();
+    } else if (eventType === "christian") {
+      invitationText = `
+Salam damai dalam kasih Tuhan,
+
+Dengan penuh suka cita, kami mengundang ${singleLineName} untuk hadir dalam acara spesial kami yang diberkati oleh Tuhan.
+
+Detail acara dapat dilihat melalui tautan berikut:
+
+${fullLink}
+
+Kehadiran dan doa restu Anda menjadi berkat tersendiri bagi kami.
+
+Tuhan memberkati.
+
+Hormat kami,
+${formattedName}
+      `.trim();
+    } else if (eventType === "hindu") {
+      invitationText = `
+Om Swastyastu,
+
+Dengan segala kerendahan hati, kami mengundang ${singleLineName} untuk hadir dalam upacara suci kami.
+
+Informasi lengkap acara dapat dilihat melalui tautan berikut:
+
+${fullLink}
+
+Kehadiran dan doa restu Anda merupakan anugerah yang sangat berarti.
+
+Hormat kami,
+${formattedName}
+
+Om Shanti Shanti Shanti Om
+      `.trim();
+    } else if (eventType === "buddhist") {
+      invitationText = `
+Namo Buddhaya,
+
+Dengan penuh kebahagiaan, kami mengundang ${singleLineName} untuk menghadiri acara kami yang penuh berkah.
+
+Detail acara dapat dilihat melalui tautan berikut:
+
+${fullLink}
+
+Semoga kehadiran Anda membawa kedamaian dan kebahagiaan bagi kita semua.
+
+Hormat kami,
+${formattedName}
+      `.trim();
+    } else if (eventType === "confucian") {
+      invitationText = `
+Salam kebajikan,
+
+Dengan tulus hati kami mengundang ${singleLineName} untuk hadir dalam acara kami yang sarat makna.
+
+Detail acara dapat dilihat melalui tautan berikut:
+
+${fullLink}
+
+Kehadiran dan restu Anda sangat kami hargai.
+
+Hormat kami,
+${formattedName}
+      `.trim();
     } else if (eventType === "universal") {
       invitationText = `
 Salam Sejahtera,
