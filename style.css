@@ -249,18 +249,6 @@ textarea {
   transform: scale(1.05);
 }
 
-#tgButton i {
-  font-size: 20px;
-}
-
-#tgButton {
-  background-color: #0088cc;
-}
-
-#tgButton:hover {
-  background-color: #006fa6;
-}
-
 footer {
   position: fixed;
   bottom: 10px;

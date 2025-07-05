@@ -18,7 +18,9 @@ function generateLink() {
       ? domainName.split("-").slice(0, 2).map(capitalizeFirstLetter).join(" & ")
       : capitalizeFirstLetter(domainName.split("-")[0]);
 
-    const encodedName = encodeURIComponent(name).replace(/%0A/g, "%0A");
+    const encodedName = encodeURIComponent(name)
+      .replace(/%20/g, "+")
+      .replace(/%0A/g, "%0A");
     const singleLineName = name.replace(/\n/g, " ");
     const fullLink = `${baseUrl}?p=${encodedName}`;
 
@@ -198,20 +200,6 @@ function sendViaInstagram() {
   window.open(`https://www.instagram.com`, "_blank");
 }
 
-function sendViaTelegram() {
-  const text = document.getElementById("linkOutput").textContent;
-  const encodedText = encodeURIComponent(text);
-
-  // URL format Telegram Web Share
-  const telegramUrl = `https://t.me/share/url?url=&text=${encodedText}`;
-
-  window.open(telegramUrl, "_blank", "noopener,noreferrer");
-
-  document.getElementById("nameInput").value = "";
-  document.getElementById("linkOutput").textContent = "";
-  hideOptionalButtons();
-}
-
 function showNotification(message) {
   const notification = document.createElement("div");
   notification.textContent = message;
@@ -239,7 +227,6 @@ function showNotification(message) {
 function showOptionalButtons() {
   document.getElementById("waButton").disabled = false;
   document.getElementById("igButton").disabled = false;
-  document.getElementById("tgButton").disabled = false;
   document.getElementById("copyButton").disabled = false;
 
   document.getElementById("extraButtons").style.display = "flex";
@@ -249,7 +236,6 @@ function showOptionalButtons() {
 function hideOptionalButtons() {
   document.getElementById("waButton").disabled = true;
   document.getElementById("igButton").disabled = true;
-  document.getElementById("tgButton").disabled = true;
   document.getElementById("copyButton").disabled = true;
 
   document.getElementById("extraButtons").style.display = "none";
